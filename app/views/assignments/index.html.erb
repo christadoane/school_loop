@@ -1,0 +1,48 @@
+
+<div class="row">
+	<div class="col-md-2">
+	<h1>Hi <%= current_user.first_name %></h1>
+	</div>
+	<div class="col-md-6"></div>
+	<div class="col-md-2">
+		<% if current_user %>
+  		<form action='/sessions/<%= session[:id] %>' method='post'>
+    		<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    		<input type='hidden' name='_method' value='delete'>
+    		<button type="submit" class="btn btn-warning">Log Out</button>
+  		</form>
+		<% end %>
+	</div>
+	<div class="col-md-2">
+	</div>
+</div>
+<div class="row">
+<h1>Assignments for discussion</h1>
+<table style="border:solid;" class="table table-striped">
+	<thead>
+	    <th>Course</th>
+		<th>Type</th>
+		<th>Name</th>
+		<th>Due Posted</th>
+		<th>Score</th>
+		<th>Percent</th>
+	</thead>
+	<% @assignments.each do |assignment| %>
+	
+	<tr>
+	    <td><%= assignment.course.name %></td>
+		<td><%= assignment.name1 %></td>
+		<td><a href="/assignments/<%= assignment.id %>"><%= assignment.name2 %></td>
+		<td><%= assignment.due %></td>
+		<td><%= assignment.score %></td>
+		<td><%= assignment.percent %></td>
+		
+		
+		<% end %>
+	</tr>
+</table>
+</table>
+</table>
+</div>
+
+

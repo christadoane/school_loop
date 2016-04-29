@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  name: MyString
+  due: 2016-04-29
+  score: MyText
+  percent: 1
+  discussed: false
+  course_id: 
+
+two:
+  type: 
+  name: MyString
+  due: 2016-04-29
+  score: MyText
+  percent: 1
+  discussed: false
+  course_id: 

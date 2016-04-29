@@ -1,0 +1,33 @@
+
+<div class="row">
+	<div class="col-md-2">
+	<h1>Hi <%= current_user.first_name %></h1>
+	</div>
+	<div class="col-md-6"></div>
+	<div class="col-md-2">
+		<% if current_user %>
+  		<form action='/sessions/<%= session[:id] %>' method='post'>
+    		<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    		<input type='hidden' name='_method' value='delete'>
+    		<button type="submit" class="btn btn-warning">Log Out</button>
+  		</form>
+		<% end %>
+	</div>
+	<div class="col-md-2">
+	</div>
+</div>
+<div class="row">
+
+	<p><%= @assignment.name2 %></p>
+	<p><%= @assignment.percent %></p>
+	<form action = "/posts" method = "post">
+			<input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+			<input type = "hidden" name = 'id' value = "<%=@assignment.id%>">
+			comment<input type = 'text' name = "content">
+			<input type = 'submit' value = "create comment">
+		</form>
+		
+	
+</div>
+
+
